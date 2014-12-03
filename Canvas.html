@@ -1,7 +1,7 @@
 
 <body>
     <canvas id="my_canvas"></canvas>
-</body>
+
 <script>
 
 
@@ -11,10 +11,19 @@ var context = null;
 setup = function()  {
     canvas = document.getElementById("my_canvas");
     context = canvas.getContext('2d');
-    canvas.width = 1200;
-    canvas.height = 720;
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    
+    img = new Image();
+    img.onload = onImageLoad;
+    img.src = "ralphyrobot.png"
+};
+
+onImageLoad = function(){
+    console.log("IMAGE!!!");
 };
 
 setup();
 
-</script>
+    </script>
+</body>
