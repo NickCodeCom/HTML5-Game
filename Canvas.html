@@ -7,8 +7,14 @@
 
 var canvas = null;
 var context = null;
+var img = null;
 
-setup = function()  {
+var onImageLoad = function(){
+    console.log("IMAGE!!!");
+    context.drawImage(img, 192, 192);
+};
+
+var setup = function() { 
     canvas = document.getElementById("my_canvas");
     context = canvas.getContext('2d');
     canvas.width = window.innerWidth;
@@ -17,10 +23,6 @@ setup = function()  {
     img = new Image();
     img.onload = onImageLoad;
     img.src = "ralphyrobot.png"
-};
-
-onImageLoad = function(){
-    console.log("IMAGE!!!");
 };
 
 setup();
